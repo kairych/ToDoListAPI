@@ -5,6 +5,6 @@ from api_v1.views import TaskDetailView, TaskListView
 
 
 urlpatterns = [
-    path('<int:pk>', TaskDetailView.as_view(), name='task-detail'),
+    path('<int:pk>/', TaskDetailView.as_view(), name='task-detail'),
     path('', TaskListView.as_view(), name='task-list'),
 ]
