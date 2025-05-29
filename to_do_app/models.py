@@ -6,7 +6,9 @@ class Task(models.Model):
     description = models.TextField(blank=True, null=True, verbose_name="Description")
     completed = models.BooleanField(default=False, verbose_name="Completed")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At", null=True, blank=True)
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name="Updated At", null=True, blank=True
+    )
 
     def __str__(self):
         return f"{self.title[:25]}"
@@ -20,5 +22,6 @@ class AstanaHub(models.Model):
     is_active = models.BooleanField(default=False, verbose_name="Active")
     company_name = models.CharField(max_length=100, verbose_name="Company Name")
     created_at = models.DateTimeField(auto_now_add=True, verbose_name="Created At")
-    updated_at = models.DateTimeField(auto_now=True, verbose_name="Updated At", null=True, blank=True)
-
+    updated_at = models.DateTimeField(
+        auto_now=True, verbose_name="Updated At", null=True, blank=True
+    )

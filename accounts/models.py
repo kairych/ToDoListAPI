@@ -7,22 +7,22 @@ class User(AbstractUser):
     email = models.EmailField(unique=True)
     username = models.CharField(max_length=150, blank=True, null=True)
 
-    USERNAME_FIELD = 'email'
+    USERNAME_FIELD = "email"
     REQUIRED_FIELDS = []
 
     groups = models.ManyToManyField(
-        'auth.Group',
-        verbose_name='groups',
+        "auth.Group",
+        verbose_name="groups",
         blank=True,
-        related_name='custom_user_set',
-        related_query_name='custom_user',
+        related_name="custom_user_set",
+        related_query_name="custom_user",
     )
     user_permissions = models.ManyToManyField(
-        'auth.Permission',
-        verbose_name='user permissions',
+        "auth.Permission",
+        verbose_name="user permissions",
         blank=True,
-        related_name='custom_user_set',
-        related_query_name='custom_user',
+        related_name="custom_user_set",
+        related_query_name="custom_user",
     )
 
     def save(self, *args, **kwargs):
@@ -36,14 +36,11 @@ class Profile(models.Model):
         get_user_model(),
         on_delete=models.CASCADE,
         related_name="profile",
-        verbose_name="User")
+        verbose_name="User",
+    )
     phone_number = models.CharField(
-        max_length=15,
-        blank=True,
-        null=True,
-        verbose_name="Phone Number")
+        max_length=15, blank=True, null=True, verbose_name="Phone Number"
+    )
     about = models.TextField(
-        max_length=1000,
-        null=True,
-        blank=True,
-        verbose_name="About me")
+        max_length=1000, null=True, blank=True, verbose_name="About me"
+    )
