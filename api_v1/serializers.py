@@ -5,7 +5,7 @@ from to_do_app.models import Task, AstanaHub
 class TaskSerializer(serializers.ModelSerializer):
     class Meta:
         model = Task
-        fields = ['title', 'description', 'completed', 'created_at', 'updated_at']
+        fields = '__all__'
         read_only = ['id', 'created_at', 'updated_at']
 
 

@@ -12,15 +12,15 @@ from .filters import TaskFilter
 from .serializers import TaskSerializer, AstanaHubSerializer
 
 
-class TaskListView(ListCreateAPIView):
-    queryset = Task.objects.all()
+class TaskListCreateView(ListCreateAPIView):
+    queryset = Task.objects.order_by('-created_at')
     serializer_class = TaskSerializer
     filter_backends = [DjangoFilterBackend]
     filterset_class = TaskFilter
     permission_classes = [IsAuthenticated]
 
 
-class TaskDetailView(RetrieveUpdateDestroyAPIView):
+class TaskDetailUpdateDeleteView(RetrieveUpdateDestroyAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     permission_classes = [IsAuthenticated]
