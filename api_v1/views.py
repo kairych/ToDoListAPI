@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import status
-from rest_framework.generics import ListAPIView, RetrieveUpdateDestroyAPIView
+from rest_framework.generics import RetrieveUpdateDestroyAPIView, ListCreateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
@@ -12,8 +12,7 @@ from .filters import TaskFilter
 from .serializers import TaskSerializer, AstanaHubSerializer
 
 
-class TaskListView(ListAPIView):
-    """List all tasks"""
+class TaskListView(ListCreateAPIView):
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
     filter_backends = [DjangoFilterBackend]
