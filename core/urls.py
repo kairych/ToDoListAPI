@@ -18,11 +18,13 @@ from django.contrib import admin
 from django.urls import path, include
 from drf_spectacular.views import SpectacularAPIView, SpectacularSwaggerView, SpectacularRedocView
 
+from api_v1.views import ParseAstanaHubView
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('auth/', include('accounts.urls')),
     path('tasks/', include('api_v1.urls')),
-    path('api-auth/', include('rest_framework.urls')),
+    path('parse_hub/', ParseAstanaHubView.as_view(), name='parse_hub'),
 ]
 
 # Schema endpoints

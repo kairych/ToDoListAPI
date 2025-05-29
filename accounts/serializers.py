@@ -4,8 +4,6 @@ from django.contrib.auth.password_validation import validate_password
 from rest_framework.fields import EmailField
 from rest_framework.serializers import ModelSerializer, CharField, Serializer
 from rest_framework_simplejwt import serializers
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
-
 from .models import Profile
 
 

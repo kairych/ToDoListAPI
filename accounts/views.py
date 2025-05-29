@@ -10,6 +10,7 @@ from .serializers import UserRegistrationSerializer, LoginSerializer
 
 
 class LoginView(GenericAPIView):
+    """Authenticate user and return JWT tokens"""
     serializer_class = LoginSerializer
     permission_classes = [AllowAny]
 
@@ -36,6 +37,7 @@ class LoginView(GenericAPIView):
 
 
 class RegisterView(CreateAPIView):
+    """Register new user"""
     queryset = User.objects.all()
     serializer_class = UserRegistrationSerializer
     permission_classes = [AllowAny]
