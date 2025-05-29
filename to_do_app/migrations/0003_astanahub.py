@@ -6,22 +6,53 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('to_do_app', '0002_alter_task_updated_at'),
+        ("to_do_app", "0002_alter_task_updated_at"),
     ]
 
     operations = [
         migrations.CreateModel(
-            name='AstanaHub',
+            name="AstanaHub",
             fields=[
-                ('id', models.BigAutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('cert_number', models.CharField(max_length=10, verbose_name='Certificate Number')),
-                ('cert_issue_date', models.DateField(verbose_name='Certificate Issue Date')),
-                ('cert_expire_date', models.DateField(verbose_name='Certificate Expire Date')),
-                ('bin', models.CharField(max_length=12, verbose_name='BIN')),
-                ('is_active', models.BooleanField(default=False, verbose_name='Active')),
-                ('company_name', models.CharField(max_length=100, verbose_name='Company Name')),
-                ('created_at', models.DateTimeField(auto_now_add=True, verbose_name='Created At')),
-                ('updated_at', models.DateTimeField(auto_now=True, null=True, verbose_name='Updated At')),
+                (
+                    "id",
+                    models.BigAutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "cert_number",
+                    models.CharField(max_length=10, verbose_name="Certificate Number"),
+                ),
+                (
+                    "cert_issue_date",
+                    models.DateField(verbose_name="Certificate Issue Date"),
+                ),
+                (
+                    "cert_expire_date",
+                    models.DateField(verbose_name="Certificate Expire Date"),
+                ),
+                ("bin", models.CharField(max_length=12, verbose_name="BIN")),
+                (
+                    "is_active",
+                    models.BooleanField(default=False, verbose_name="Active"),
+                ),
+                (
+                    "company_name",
+                    models.CharField(max_length=100, verbose_name="Company Name"),
+                ),
+                (
+                    "created_at",
+                    models.DateTimeField(auto_now_add=True, verbose_name="Created At"),
+                ),
+                (
+                    "updated_at",
+                    models.DateTimeField(
+                        auto_now=True, null=True, verbose_name="Updated At"
+                    ),
+                ),
             ],
         ),
     ]
